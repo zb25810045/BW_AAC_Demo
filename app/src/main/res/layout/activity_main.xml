@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.bloodcrown.bwaacdemo.viewmodle.MyViewModule"></import>
+        <variable name="viewModule" type="com.bloodcrown.bwaacdemo.viewmodle.MyViewModule"></variable>
+        <variable name="viewData" type="String"></variable>
+        <variable name="appData" type="String"></variable>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.bloodcrown.bwaacdemo.view.MyLifecyleTextView
+            android:id="@+id/tx_lifecley"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/main_text_test"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tx_viewData"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@{viewData}"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tx_appData"
+            app:layout_constraintTop_toBottomOf="@+id/tx_lifecley"
+            tools:text="@string/main_tx_viewData"/>
+
+        <TextView
+            android:id="@+id/tx_appData"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@{appData}"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/tx_viewData"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tx_viewData"
+            tools:text="@string/main_tx_appData"/>
+
+        <Button
+            android:id="@+id/btn_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModule.startSecondActvity()}"
+            android:text="@string/main_btn_one"
+            app:layout_constraintTop_toBottomOf="@id/tx_viewData"/>
+
+        <Button
+            android:id="@+id/btn_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{ (view) -> viewModule.getPrivateBookData() }"
+            android:text="@string/main_btn_two"
+            app:layout_constraintTop_toBottomOf="@id/btn_one"/>
+
+        <Button
+            android:id="@+id/btn_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/main_btn_three"
+            app:layout_constraintTop_toBottomOf="@id/btn_two"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

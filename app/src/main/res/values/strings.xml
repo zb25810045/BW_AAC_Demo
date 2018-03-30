@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BWAACDemo</string>
+
+    <string name="main_btn_one">打开新页面</string>
+    <string name="main_btn_two">获取页面私有数据</string>
+    <string name="main_btn_three">测试3</string>
+    <string name="main_text_test">测试lifecyle</string>
+
+    <string name="main_tx_viewData">这里显示页面私有数据</string>
+    <string name="main_tx_appData">这里显示app全局数据</string>
+
+</resources>
